@@ -42,6 +42,7 @@ npx skills@latest add jack4world/jackwangskills
 | --- | --- | --- | --- |
 | [learn-start](./skills/learn-start/SKILL.md) | 自动 | 不知道该用哪个 | 判断你在哪一步，告诉你该敲哪个命令 |
 | [jargon-buster](./skills/jargon-buster/SKILL.md) | 自动 | 有词听不懂 | 一句话白话加生活类比，外加一份[常见术语表](./skills/jargon-buster/glossary.md) |
+| [wait-what](./skills/wait-what/SKILL.md) | 自动 | 整段话没跟上 | 先诊断卡在哪一层，再换一种讲法重讲，不是把原话说慢 |
 | [mentor-grill](./skills/mentor-grill/SKILL.md) | `/jackwangskills:mentor-grill` | 想法还很模糊 | 一轮一问、每问带选项的需求澄清，最后落一份需求共识 |
 | [learn-roadmap](./skills/learn-roadmap/SKILL.md) | `/jackwangskills:learn-roadmap` | 需求清楚，不知道先做哪个 | 一份每步做完都能看见成果的白话路线图 |
 | [learn-tdd](./skills/learn-tdd/SKILL.md) | `/jackwangskills:learn-tdd` | 要动手写功能 | 我写好失败的测试并留空位，你填核心代码 |
@@ -52,6 +53,10 @@ npx skills@latest add jack4world/jackwangskills
 六个教学技能**故意设成手动触发**：它们会劫持日常工作，说一句「帮我优化这段代码」不该变成一堂课。想练的时候才敲命令。
 
 命令带 `jackwangskills:` 前缀，这是插件安装技能的固定形式（`<插件名>:<技能名>`）。嫌长可以只敲 `/learn` 让补全接手。
+
+三个自动触发的不用敲命令，直接说人话就行：不知道从哪开始（`learn-start`）、有词不懂（`jargon-buster`）、**整段没跟上就说「没听懂」**（`wait-what`）。
+
+分界标准是**接住的自动，接管的手动**：前三个只是接住你、换个说法，不抢你手上的活；六个教学技能会接管整个流程，所以要你主动开。
 
 ## 典型流程
 
@@ -85,10 +90,17 @@ npx skills@latest add jack4world/jackwangskills
 | `improve-codebase-architecture` | `learn-refactor` | 原版基于深模块理论扫全库出 HTML 报告。改成只看刚写的代码，一次只指一条具体坏味道，五段式讲清楚位置、问题、为什么、改完的样子、背后的原则 |
 | `diagnosing-bugs` | `learn-debug` | 原版是 6 阶段硬纪律（最小化重现、可证伪假设、探针）。只保留最核心的一条（**没有稳定重现不许开始猜**），并加了「先让用户猜一次」的学习环节和修完必做的复盘 |
 | `implement` | `learn-ship` | 原版 4 行，串起 TDD、全量测试、code-review、提交。教学版把重点压在**手把手带第一次 git commit** 上，新手不会提交是会真丢代码的 |
+| `wait-what` | `wait-what` | 原版 3 行（「重讲，用简单英语，用 CONTEXT.md 的词汇」）。教学版补上**先诊断卡在哪一层**（词不懂／不知道为什么／一次给太多／步子太大）、第二次必须换完全不同的形式、第三次讲不通就明确跳过，以及收尾让用户复述来验证 |
 | （新增） | `jargon-buster` | 术语翻译，被其他技能随时调用 |
 | （新增） | `learn-start` | 新手入口路由 |
 
-**没有转的**：`to-spec`（依赖 issue tracker，且 `mentor-grill` 的需求共识已是轻量版）、`code-review`、`prototype`、`research`、`domain-modeling`、`codebase-design`、`wayfinder`、`triage`、`wizard` 等 19 个。自用的小项目基本用不上，加了是负担。
+**没有转的 18 个**，按对自用小项目的实际意义分三档：
+
+- **不是给用户用的功能**：`ask-matt`（路由，本仓库是 `learn-start`）、`setup-matt-pocock-skills`、`writing-for-agents`
+- **需要 issue tracker 或团队**：`triage`、`wayfinder`、`to-spec`、`to-questionnaire`、`handoff`。其中 `to-spec` 的位置已被 `mentor-grill` 产出的 `.learn/需求共识.md` 顶掉
+- **以后可能会补**：`wizard`（第一次部署上线时会撞上）、`code-review`（`implement` 链条里目前缺的一环）、`research`、`prototype`、`resolving-merge-conflicts`、`domain-modeling`、`codebase-design`、`grill-with-docs`、`teach`
+
+`teach` 和本仓库是两条路：它生成 HTML 课件、跨会话教一个**主题**；本仓库是**在做真项目的过程中**教。想系统学某门语言本身，用 `teach` 更合适。
 
 ## 本地开发
 

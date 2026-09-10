@@ -43,10 +43,10 @@ skills/<skill-name>/
 
 | 技能 | 触发 |
 | --- | --- |
-| `learn-start`、`jargon-buster` | 自动（model-invoked） |
+| `learn-start`、`jargon-buster`、`wait-what` | 自动（model-invoked） |
 | `mentor-grill`、`learn-roadmap`、`learn-tdd`、`learn-ship`、`learn-refactor`、`learn-debug` | 手动（`disable-model-invocation: true`） |
 
-六个教学技能设成手动，是因为它们会劫持日常工作：说一句「帮我优化这段代码」不该变成一堂课。`learn-start` 保持自动，是因为它是唯一的入口，而且它只指路、不接管。
+分界标准是**接住的自动，接管的手动**：`jargon-buster`、`wait-what`、`learn-start` 只是接住用户、换个说法或指个路，不会抢走他手上的活；六个教学技能会接管整个流程，说一句「帮我优化这段代码」不该变成一堂课，所以必须由人主动敲命令启动。
 
 改手动的技能要同时做三件事，缺一不可：
 
