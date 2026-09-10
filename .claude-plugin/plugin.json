@@ -1,0 +1,28 @@
+{
+  "name": "codeskills",
+  "version": "0.1.0",
+  "description": "小白友好的编程学习技能集：边开发边学习。需求澄清一轮一问、TDD 结对填空、白话路线图、代码坏味道纠错。改编自 Matt Pocock 的 skills。",
+  "author": {
+    "name": "jack4world"
+  },
+  "homepage": "https://github.com/jack4world/codeskills",
+  "repository": "https://github.com/jack4world/codeskills",
+  "license": "MIT",
+  "keywords": [
+    "beginner",
+    "learning",
+    "tdd",
+    "teaching",
+    "chinese",
+    "code-review",
+    "onboarding"
+  ],
+  "skills": [
+    "./skills/learn-start",
+    "./skills/mentor-grill",
+    "./skills/learn-roadmap",
+    "./skills/learn-tdd",
+    "./skills/learn-refactor",
+    "./skills/jargon-buster"
+  ]
+}

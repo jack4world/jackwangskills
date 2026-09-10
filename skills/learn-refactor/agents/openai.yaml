@@ -1,0 +1,3 @@
+interface:
+  display_name: "代码坏味道纠错"
+  short_description: "一次一条，你动手改"
