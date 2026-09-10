@@ -1,0 +1,5 @@
+interface:
+  display_name: "报错诊断"
+  short_description: "先建重现再猜原因，修完教你自己认"
+policy:
+  allow_implicit_invocation: false

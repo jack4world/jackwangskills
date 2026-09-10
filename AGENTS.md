@@ -28,6 +28,7 @@ skills/<skill-name>/
 1. **能让用户动手的地方绝不代劳。** AI 搭台子（环境、骨架、测试、签名、import），把最值钱的那几行留空给用户。留空处统一用 `// 💡 请在这里填入你的代码`。
 2. **术语当场翻译。** 任何黑话第一次出现就配一句白话解释，不要等用户问。讲不清的调用 Skill 工具 "jargon-buster"。
 3. **一次只推进一件事。** 一个问题、一个任务、一个测试、一条建议。新手的挫败感几乎都来自一次给太多。
+4. **每跑一步，跟一句解释。** 每执行一个动作（跑命令、改文件、装依赖），紧接着用一到两句话说清干了什么、为什么、结果说明什么。不攒到最后一次性汇报，不只贴命令输出让用户自己看。**技能之间是隔离的，所以这条规则要写进每一个会执行动作的 `SKILL.md`，不能只写在一处。**
 
 其他约定：
 
@@ -42,9 +43,9 @@ skills/<skill-name>/
 | 技能 | 触发 |
 | --- | --- |
 | `learn-start`、`jargon-buster` | 自动（model-invoked） |
-| `mentor-grill`、`learn-roadmap`、`learn-tdd`、`learn-refactor` | 手动（`disable-model-invocation: true`） |
+| `mentor-grill`、`learn-roadmap`、`learn-tdd`、`learn-ship`、`learn-refactor`、`learn-debug` | 手动（`disable-model-invocation: true`） |
 
-四个教学技能设成手动，是因为它们会劫持日常工作：说一句「帮我优化这段代码」不该变成一堂课。`learn-start` 保持自动，是因为它是唯一的入口，而且它只指路、不接管。
+六个教学技能设成手动，是因为它们会劫持日常工作：说一句「帮我优化这段代码」不该变成一堂课。`learn-start` 保持自动，是因为它是唯一的入口，而且它只指路、不接管。
 
 改手动的技能要同时做三件事，缺一不可：
 

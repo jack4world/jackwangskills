@@ -9,9 +9,15 @@
     {
       "name": "jackwangskills",
       "source": "./",
-      "description": "边开发边学习的教学版技能：mentor-grill、learn-roadmap、learn-tdd、learn-refactor、jargon-buster。",
+      "description": "边开发边学习的教学版技能：需求澄清、路线图、结对填空 TDD、报错诊断、收尾提交、坏味道纠错、术语翻译。",
       "category": "education",
-      "keywords": ["beginner", "learning", "tdd", "teaching", "chinese"]
+      "keywords": [
+        "beginner",
+        "learning",
+        "tdd",
+        "teaching",
+        "chinese"
+      ]
     }
   ]
 }

@@ -13,7 +13,7 @@
 | AI | 配环境、写测试、搭骨架、翻译术语、给提示 |
 | 你 | 做决定、填核心代码、动手改 |
 
-三条贯穿始终的原则：能让你动手的地方绝不代劳、术语当场翻译成人话、一次只推进一件事。
+四条贯穿始终的原则：能让你动手的地方绝不代劳、术语当场翻译成人话、一次只推进一件事、**每跑一步跟一句解释**（不攒着汇报，不只贴命令输出）。
 
 ## 安装
 
@@ -46,24 +46,28 @@ npx skills@latest add jack4world/jackwangskills
 | [learn-roadmap](./skills/learn-roadmap/SKILL.md) | `/learn-roadmap` | 需求清楚，不知道先做哪个 | 一份每步做完都能看见成果的白话路线图 |
 | [learn-tdd](./skills/learn-tdd/SKILL.md) | `/learn-tdd` | 要动手写功能 | 我写好失败的测试并留空位，你填核心代码 |
 | [learn-refactor](./skills/learn-refactor/SKILL.md) | `/learn-refactor` | 代码写完想改好 | 一次只指一条坏味道，讲透原理，你动手改 |
+| [learn-debug](./skills/learn-debug/SKILL.md) | `/learn-debug` | 报错、白屏、跑不起来 | 报错翻译成人话，先建重现再猜原因，外加[十种常见报错速查](./skills/learn-debug/common-errors.md) |
+| [learn-ship](./skills/learn-ship/SKILL.md) | `/learn-ship` | 一步做完了要收尾 | 跑全量测试、手把手带你第一次 git commit、勾掉路线图 |
 
-四个教学技能**故意设成手动触发**：它们会劫持日常工作，说一句「帮我优化这段代码」不该变成一堂课。想练的时候才敲命令。
+六个教学技能**故意设成手动触发**：它们会劫持日常工作，说一句「帮我优化这段代码」不该变成一堂课。想练的时候才敲命令。
 
 ## 典型流程
 
 ```
 「我想做个记账的小工具」
         ↓  learn-start 自动接住，告诉你敲 /mentor-grill
-   /mentor-grill：一轮一问，问清楚做给谁、存哪儿、要不要登录
+   /mentor-grill    一轮一问，问清楚做给谁、存哪儿、要不要登录
    .learn/需求共识.md
         ↓
-   /learn-roadmap：竖着切成 5 步，每步做完都能演示
+   /learn-roadmap   竖着切成 5 步，每步做完都能演示
    .learn/路线图.md
         ↓
-   /learn-tdd：第 1 步，我写测试你填代码，红 → 绿 → 重构
-     能跑的功能
+   /learn-tdd       我写测试你填代码，红 → 绿 → 重构
+        ↓                    ↘ 卡在报错上： /learn-debug
+   /learn-refactor  一次一条，把它改好
         ↓
-   /learn-refactor：一次一条，把它改好
+   /learn-ship      全量测试 → 提交 → 勾掉这一步
+        ↓
      下一步 ↺
 ```
 
@@ -77,8 +81,12 @@ npx skills@latest add jack4world/jackwangskills
 | `tdd` | `learn-tdd` | 原版假设你会配环境、会写测试。改成 AI 全包环境和测试、骨架留空位给用户填，答错走三级提示阶梯而不是直接给答案 |
 | `to-tickets` | `learn-roadmap` | 保留「竖着切」的内核，但用夹心蛋糕的比方讲清楚为什么，任务标题一律白话，并解释每一步为什么排在这个位置 |
 | `improve-codebase-architecture` | `learn-refactor` | 原版基于深模块理论扫全库出 HTML 报告。改成只看刚写的代码，一次只指一条具体坏味道，五段式讲清楚位置、问题、为什么、改完的样子、背后的原则 |
+| `diagnosing-bugs` | `learn-debug` | 原版是 6 阶段硬纪律（最小化重现、可证伪假设、探针）。只保留最核心的一条（**没有稳定重现不许开始猜**），并加了「先让用户猜一次」的学习环节和修完必做的复盘 |
+| `implement` | `learn-ship` | 原版 4 行，串起 TDD、全量测试、code-review、提交。教学版把重点压在**手把手带第一次 git commit** 上，新手不会提交是会真丢代码的 |
 | （新增） | `jargon-buster` | 术语翻译，被其他技能随时调用 |
 | （新增） | `learn-start` | 新手入口路由 |
+
+**没有转的**：`to-spec`（依赖 issue tracker，且 `mentor-grill` 的需求共识已是轻量版）、`code-review`、`prototype`、`research`、`domain-modeling`、`codebase-design`、`wayfinder`、`triage`、`wizard` 等 19 个。自用的小项目基本用不上，加了是负担。
 
 ## 本地开发
 
