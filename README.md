@@ -1,4 +1,4 @@
-# codeskills
+# jackwangskills
 
 小白友好的编程学习技能集。设计前提是**边开发边学习**：不是先学完再做，而是在做一个真项目的过程中把工程思维练出来。
 
@@ -18,8 +18,8 @@
 ### Claude Code（插件）
 
 ```bash
-/plugin marketplace add jack4world/codeskills
-/plugin install codeskills@jack4world
+/plugin marketplace add jack4world/jackwangskills
+/plugin install jackwangskills@jack4world
 ```
 
 装完在任意项目里说一句「我是新手，不知道从哪开始」就能用。
@@ -27,7 +27,7 @@
 ### Codex / Cursor / Trae 等（skills.sh）
 
 ```bash
-npx skills@latest add jack4world/codeskills
+npx skills@latest add jack4world/jackwangskills
 ```
 
 会弹出一个可勾选的菜单，选技能、选要装到哪些 agent 上，文件会写进项目的 `.agents/skills/`。这种方式装出来的文件归你所有，可以随便改。
@@ -35,7 +35,7 @@ npx skills@latest add jack4world/codeskills
 单独装一个：
 
 ```bash
-npx skills@latest add jack4world/codeskills --skill=learn-tdd
+npx skills@latest add jack4world/jackwangskills --skill=learn-tdd
 ```
 
 **两种方式二选一。** 插件是订阅式的只读包，会自动更新；skills.sh 写的是你自己的可编辑文件。同时装会让每个技能出现两遍。
@@ -90,7 +90,7 @@ claude plugin validate . --strict
 
 ```bash
 /plugin marketplace add /Users/daboluo/Project/codeskills
-/plugin install codeskills@jack4world
+/plugin install jackwangskills@jack4world
 ```
 
 仓库约定见 [AGENTS.md](./AGENTS.md)。
