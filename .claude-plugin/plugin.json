@@ -1,6 +1,6 @@
 {
   "name": "jackwangskills",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "小白友好的编程学习技能集：边开发边学习。需求澄清一轮一问、TDD 结对填空、白话路线图、报错诊断、收尾提交、代码坏味道纠错。改编自 Matt Pocock 的 skills。",
   "author": {
     "name": "jack4world"

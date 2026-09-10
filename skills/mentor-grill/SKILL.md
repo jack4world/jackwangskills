@@ -113,7 +113,7 @@ $ npm test
 
 </consensus-template>
 
-写完告诉用户：「需求定完了。接下来输入 `/learn-roadmap`，我把它拆成一份能一步步做的路线图。」
+写完告诉用户：「需求定完了。接下来输入 `/jackwangskills:learn-roadmap`，我把它拆成一份能一步步做的路线图。」
 
 ## 明确不要做的事
 

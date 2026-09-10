@@ -42,32 +42,34 @@ npx skills@latest add jack4world/jackwangskills
 | --- | --- | --- | --- |
 | [learn-start](./skills/learn-start/SKILL.md) | 自动 | 不知道该用哪个 | 判断你在哪一步，告诉你该敲哪个命令 |
 | [jargon-buster](./skills/jargon-buster/SKILL.md) | 自动 | 有词听不懂 | 一句话白话加生活类比，外加一份[常见术语表](./skills/jargon-buster/glossary.md) |
-| [mentor-grill](./skills/mentor-grill/SKILL.md) | `/mentor-grill` | 想法还很模糊 | 一轮一问、每问带选项的需求澄清，最后落一份需求共识 |
-| [learn-roadmap](./skills/learn-roadmap/SKILL.md) | `/learn-roadmap` | 需求清楚，不知道先做哪个 | 一份每步做完都能看见成果的白话路线图 |
-| [learn-tdd](./skills/learn-tdd/SKILL.md) | `/learn-tdd` | 要动手写功能 | 我写好失败的测试并留空位，你填核心代码 |
-| [learn-refactor](./skills/learn-refactor/SKILL.md) | `/learn-refactor` | 代码写完想改好 | 一次只指一条坏味道，讲透原理，你动手改 |
-| [learn-debug](./skills/learn-debug/SKILL.md) | `/learn-debug` | 报错、白屏、跑不起来 | 报错翻译成人话，先建重现再猜原因，外加[十种常见报错速查](./skills/learn-debug/common-errors.md) |
-| [learn-ship](./skills/learn-ship/SKILL.md) | `/learn-ship` | 一步做完了要收尾 | 跑全量测试、手把手带你第一次 git commit、勾掉路线图 |
+| [mentor-grill](./skills/mentor-grill/SKILL.md) | `/jackwangskills:mentor-grill` | 想法还很模糊 | 一轮一问、每问带选项的需求澄清，最后落一份需求共识 |
+| [learn-roadmap](./skills/learn-roadmap/SKILL.md) | `/jackwangskills:learn-roadmap` | 需求清楚，不知道先做哪个 | 一份每步做完都能看见成果的白话路线图 |
+| [learn-tdd](./skills/learn-tdd/SKILL.md) | `/jackwangskills:learn-tdd` | 要动手写功能 | 我写好失败的测试并留空位，你填核心代码 |
+| [learn-refactor](./skills/learn-refactor/SKILL.md) | `/jackwangskills:learn-refactor` | 代码写完想改好 | 一次只指一条坏味道，讲透原理，你动手改 |
+| [learn-debug](./skills/learn-debug/SKILL.md) | `/jackwangskills:learn-debug` | 报错、白屏、跑不起来 | 报错翻译成人话，先建重现再猜原因，外加[十种常见报错速查](./skills/learn-debug/common-errors.md) |
+| [learn-ship](./skills/learn-ship/SKILL.md) | `/jackwangskills:learn-ship` | 一步做完了要收尾 | 跑全量测试、手把手带你第一次 git commit、勾掉路线图 |
 
 六个教学技能**故意设成手动触发**：它们会劫持日常工作，说一句「帮我优化这段代码」不该变成一堂课。想练的时候才敲命令。
+
+命令带 `jackwangskills:` 前缀，这是插件安装技能的固定形式（`<插件名>:<技能名>`）。嫌长可以只敲 `/learn` 让补全接手。
 
 ## 典型流程
 
 ```
 「我想做个记账的小工具」
-        ↓  learn-start 自动接住，告诉你敲 /mentor-grill
-   /mentor-grill    一轮一问，问清楚做给谁、存哪儿、要不要登录
-   .learn/需求共识.md
-        ↓
-   /learn-roadmap   竖着切成 5 步，每步做完都能演示
-   .learn/路线图.md
-        ↓
-   /learn-tdd       我写测试你填代码，红 → 绿 → 重构
-        ↓                    ↘ 卡在报错上： /learn-debug
-   /learn-refactor  一次一条，把它改好
-        ↓
-   /learn-ship      全量测试 → 提交 → 勾掉这一步
-        ↓
+        │  learn-start 自动接住，告诉你敲下面第一条
+        ▼
+/jackwangskills:mentor-grill      一轮一问，问清楚做给谁、存哪儿
+        ▼   产出 .learn/需求共识.md
+/jackwangskills:learn-roadmap     竖着切成 5 步，每步都能演示
+        ▼   产出 .learn/路线图.md
+/jackwangskills:learn-tdd         我写测试你填代码，红 → 绿 → 重构
+        │        └─ 卡在报错上： /jackwangskills:learn-debug
+        ▼
+/jackwangskills:learn-refactor    一次一条，把它改好
+        ▼
+/jackwangskills:learn-ship        全量测试 → 提交 → 勾掉这一步
+        ▼
      下一步 ↺
 ```
 
