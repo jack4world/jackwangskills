@@ -1,5 +1,5 @@
 interface:
-  display_name: "结对填空 TDD"
-  short_description: "我写测试，你填核心代码"
+  display_name: "测试先行做功能"
+  short_description: "我写测试再写实现，你只管验收"
 policy:
   allow_implicit_invocation: false

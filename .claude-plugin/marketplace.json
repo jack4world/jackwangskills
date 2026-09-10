@@ -4,12 +4,12 @@
     "name": "jack4world",
     "url": "https://github.com/jack4world"
   },
-  "description": "小白友好的编程学习技能集，可直接安装的 Claude Code 插件。",
+  "description": "面向零基础初学者的编程技能集，可直接安装的 Claude Code 插件。",
   "plugins": [
     {
       "name": "jackwangskills",
       "source": "./",
-      "description": "边开发边学习的教学版技能：需求澄清、路线图、结对填空 TDD、报错诊断、收尾提交、坏味道纠错、术语翻译。",
+      "description": "面向零基础初学者：需求澄清、路线图、测试先行做功能、报错诊断、收尾提交存档、坏味道纠错、术语翻译。活我干完，选择留给你。",
       "category": "education",
       "keywords": [
         "beginner",

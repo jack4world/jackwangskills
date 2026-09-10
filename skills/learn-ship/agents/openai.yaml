@@ -1,5 +1,5 @@
 interface:
   display_name: "收尾闭环"
-  short_description: "跑全量测试、带你提交、勾路线图"
+  short_description: "跑全量测试、替你提交存档、勾路线图"
 policy:
   allow_implicit_invocation: false
