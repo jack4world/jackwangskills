@@ -7,9 +7,11 @@
 ```
 skills/<skill-name>/
 ├── SKILL.md              必需，带 YAML frontmatter
-├── agents/openai.yaml    必需，Codex 的 UI 元数据
+├── agents/openai.yaml    可选，Codex 的 UI 元数据
 └── <其他>.md             可选，该技能自己的参考文档
 ```
+
+`openai.yaml` 是可选的：现有技能都带着，新技能不写也行。别为一个你不用的工具背上义务。
 
 技能目录是扁平的，没有分桶。每个技能都必须同时出现在：
 
@@ -29,10 +31,26 @@ skills/<skill-name>/
 
 其他约定：
 
-- **技能之间的依赖写成「调用 Skill 工具 "<name>"」**，不要写 `/skill` 也不要跨目录引用 `../other-skill/FILE.md`。共享的参考文档放在拥有它的技能目录里，别的技能通过调用该技能来用。
+- **手动触发的技能不能被任何其他技能调用。** 这是硬规则，不是风格偏好。`disable-model-invocation: true` 的技能只有人能启动，别的技能连用 Skill 工具点它的名字都不行。跨技能依赖只能写成让人手动敲命令：「输入 `/learn-tdd`，我带你补一个测试再回来」，然后**停下来等**。
+- **自动触发的技能之间，依赖写成「调用 Skill 工具 "<name>"」**，不要写 `/skill` 也不要跨目录引用 `../other-skill/FILE.md`。共享的参考文档放在拥有它的技能目录里，别的技能通过调用该技能来用。
 - **给用户看的输出格式要写成代码块模板**，不要只用散文描述。模板是给 agent 照抄的，散文会被自由发挥。
 - **散文里不用破折号。** 该用逗号、冒号、句号、括号或连词的地方就用它们，不要做无脑字符替换。
 - **frontmatter 的 `description` 同时写中英文触发词。** 中文写给用户看，英文触发短语（`Use when the user…`）提高模型自动命中率。
+
+## 触发方式
+
+| 技能 | 触发 |
+| --- | --- |
+| `learn-start`、`jargon-buster` | 自动（model-invoked） |
+| `mentor-grill`、`learn-roadmap`、`learn-tdd`、`learn-refactor` | 手动（`disable-model-invocation: true`） |
+
+四个教学技能设成手动，是因为它们会劫持日常工作：说一句「帮我优化这段代码」不该变成一堂课。`learn-start` 保持自动，是因为它是唯一的入口，而且它只指路、不接管。
+
+改手动的技能要同时做三件事，缺一不可：
+
+1. frontmatter 加 `disable-model-invocation: true`
+2. `agents/openai.yaml` 加 `policy.allow_implicit_invocation: false`（两个 harness 要一致）
+3. `description` 从模型触发词改写成给人看的一句话，因为它会出现在斜杠命令列表里
 
 ## 改完之后
 

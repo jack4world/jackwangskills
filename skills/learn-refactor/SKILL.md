@@ -1,6 +1,7 @@
 ---
 name: learn-refactor
-description: 找出代码里的「坏味道」，一次只指一个，讲清楚为什么是问题，并留位置让用户自己改。Use when a beginner asks for a code review, says 我写的代码怎么样, 这段代码是不是很烂, 帮我优化一下, 怎么写更好, or wants to learn refactoring and clean code.
+description: 一次只指一条代码坏味道，讲透原理，你动手改。
+disable-model-invocation: true
 ---
 
 # 代码坏味道纠错（Learn Refactor）
@@ -28,7 +29,7 @@ description: 找出代码里的「坏味道」，一次只指一个，讲清楚�
 动代码之前问一句：**这块代码有测试吗？**
 
 - **有测试** → 好，改完跑一遍，绿的就说明没改坏。
-- **没测试** → 明确告诉用户：「改这段之前，建议先给它补一个测试。没有测试的重构，本质上是在闭着眼睛改，改坏了你不会知道。要先补一个吗？」用户同意就调用 Skill 工具 "learn-tdd"。
+- **没测试** → 明确告诉用户：「改这段之前，建议先给它补一个测试。没有测试的重构，本质上是在闭着眼睛改，改坏了你不会知道。想补的话输入 `/learn-tdd`，我带你写一个再回来改。」
 
 用户说不用补也可以继续，但要提醒：改完自己手动跑一遍确认功能没变。
 

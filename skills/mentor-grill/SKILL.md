@@ -1,6 +1,7 @@
 ---
 name: mentor-grill
-description: 小白友好的需求澄清导师。每轮只问一个问题，配 2-3 个带白话解释的选项。Use when a beginner wants to clarify what they are building, says 我想做一个…, 不知道该怎么设计, 帮我理需求, or asks to be walked through decisions one at a time.
+description: 一轮只问一个问题、每问带选项的需求澄清，最后落一份需求共识。
+disable-model-invocation: true
 ---
 
 # 导师式需求澄清（Mentor Grill）
@@ -97,7 +98,7 @@ description: 小白友好的需求澄清导师。每轮只问一个问题，配 
 
 </consensus-template>
 
-写完告诉用户：「需求定完了。接下来可以说『帮我拆成任务』，我会把它变成一份能一步步做的路线图。」
+写完告诉用户：「需求定完了。接下来输入 `/learn-roadmap`，我把它拆成一份能一步步做的路线图。」
 
 ## 明确不要做的事
 

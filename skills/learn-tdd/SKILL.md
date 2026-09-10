@@ -1,6 +1,7 @@
 ---
 name: learn-tdd
-description: 结对填空式 TDD 教学。AI 配好环境、写好失败的测试、留出空位，由用户亲手填代码让测试变绿。Use when a beginner wants to learn testing, write tests for the first time, practice TDD hands-on, says 我想自己写写看, 教我写测试, or 边做边学.
+description: 结对填空式 TDD：我配环境写测试，你填核心代码。
+disable-model-invocation: true
 ---
 
 # 结对填空 TDD（Learn TDD）

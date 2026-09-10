@@ -1,6 +1,7 @@
 ---
 name: learn-roadmap
-description: 把想法拆成新手能一步步做完的白话路线图，每一步都能看见成果，并解释为什么这么拆。Use when a beginner has a plan or idea and needs it broken into doable steps, says 帮我拆成任务, 不知道先做哪个, 从哪开始写, or wants a roadmap or todo list for a project.
+description: 把想法拆成每一步都能看见成果的白话路线图。
+disable-model-invocation: true
 ---
 
 # 白话路线图（Learn Roadmap）
@@ -45,7 +46,7 @@ description: 把想法拆成新手能一步步做完的白话路线图，每一�
 
 ### 1. 先确认需求清楚了
 
-如果 `.learn/需求共识.md` 存在就读它。如果需求还是一团模糊（用户说不清做完是什么样），不要硬拆，调用 Skill 工具 "mentor-grill" 先把需求问清楚。
+如果 `.learn/需求共识.md` 存在就读它。如果需求还是一团模糊（用户说不清做完是什么样），不要硬拆，告诉用户：「需求还不够清楚，硬拆出来的路线图会是错的。输入 `/mentor-grill`，我一轮问你一个问题，把它问清楚再回来拆。」然后停下来等，不要自己猜着往下拆。
 
 拆一份没想明白的需求，只会得到一份没想明白的路线图。
 
@@ -136,7 +137,7 @@ description: 把想法拆成新手能一步步做完的白话路线图，每一�
 
 写完告诉用户：
 
-「路线图写好了，在 `.learn/路线图.md`。建议从第 1 步开始，说一句『开始第 1 步』我就带你做。想练写测试的话，说『用 TDD 做第 1 步』，我会先把测试写好、留空位给你填。」
+「路线图写好了，在 `.learn/路线图.md`。建议从第 1 步开始。想让我把测试写好、留空位给你填的话，输入 `/learn-tdd`，然后告诉我做第 1 步。」
 
 ## 大改造是例外
 
