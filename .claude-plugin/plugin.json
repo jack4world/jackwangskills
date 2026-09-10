@@ -1,6 +1,6 @@
 {
   "name": "jackwangskills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "给别的领域的人用的编程技能集：你出创意和方向，代码和技术取舍我全包，术语当场翻译。需求澄清一轮一问、测试先行做功能、白话路线图、报错诊断、收尾提交存档、代码坏味道纠错。改编自 Matt Pocock 的 skills。",
   "author": {
     "name": "jack4world"
